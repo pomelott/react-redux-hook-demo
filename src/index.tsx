@@ -1,12 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import App from './components';
+import {Provider} from 'react-redux';
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+// import App from './components';
+import App from './components/App';
 import "./extract.less"
-
+import store from './newStore';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router>
+        <div className="flex justify-center">
+        <Link className="router-item" to="/index">index</Link>
+        <Link className="router-item" to="/person">person</Link>
+        </div>
+        <Switch>
+          <Route  exact path="/index">
+            index content
+            <App></App>
+          </Route>
+          <Route class="router-item" path="/person">person content</Route>
+        </Switch>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
