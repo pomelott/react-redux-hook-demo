@@ -51,6 +51,7 @@ function App (props: any) {
 
   return (
     <div>
+        {/* 此处demo重复UI组件，暂不做抽离。实际项目中应根据情况抽离 */}
         {/* 听力列表 */}
         <h3 className='text-lg bg-blue-500 text-white p-3 mt-5'>{listenList.title}</h3>
         <Input onChange={handleChange} value={state.inputValue} placeholder="爷请输入..."/>

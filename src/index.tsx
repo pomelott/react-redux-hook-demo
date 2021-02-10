@@ -22,10 +22,12 @@ ReactDOM.render(
         </div>
         <Switch>
           <Route  exact path="/index">
-            index content
+            <h2 className="text-center text-blue-500 text-4xl mt-5">index route content</h2>
             <App></App>
           </Route>
-          <Route class="router-item" path="/person">person content</Route>
+          <Route class="router-item" path="/person">
+          <h2 className="text-center text-blue-500 text-4xl mt-5">person route content</h2>
+          </Route>
         </Switch>
       </Router>
     </Provider>
