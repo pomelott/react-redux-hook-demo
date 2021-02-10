@@ -1,5 +1,10 @@
 # Getting Started with Create React App
 
+* 二零二一农历春节前，因瘟疫困于北京，归乡不遂，故作此。
+* `store` 为不拆分模块的基础用法，用以尝鲜参考。
+* `newStore` 为模块化后的进阶用法，用以工程项目中参考。
+* 如有帮助，还望不吝赐星。
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
