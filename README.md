@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# react-redux-hook-demo
+
+* Latest feature with hooks api、redux、react-redux、redux-saga
 
 * 二零二一农历春节前，因瘟疫困于北京，归乡不遂，故作此。
 * `store` 为不拆分模块的基础用法，用以尝鲜参考。

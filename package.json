@@ -1,7 +1,6 @@
 {
-  "name": "teitei",
+  "name": "react-redux-hook-demo",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.0",
     "@tailwindcss/postcss7-compat": "^2.0.2",
