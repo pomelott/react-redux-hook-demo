@@ -4,6 +4,9 @@ import List from './List';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import {listenAction, readAction} from '../newStore/actions';
+
+import TestLifeTimes from './TestLifeTimes';
+
 function App (props: any) {
 
   const dispatch = useDispatch();
@@ -62,6 +65,7 @@ function App (props: any) {
         <Input onChange={handleChange} value={state.inputValue} placeholder="爷请输入..."/>
         <Btn rounded onClick={(e: any) => {handleClick(e, 'read')}}>Add</Btn>
         <List data={readList.list ? readList.list : []} itemClick={(index: number) => {handleListItemClick(index, 'read')}}/>
+        <TestLifeTimes />
     </div>
   )
 }

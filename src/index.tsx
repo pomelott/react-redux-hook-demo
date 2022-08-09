@@ -6,26 +6,28 @@ import {
   HashRouter as Router,
   Switch,
   Route,
-  Link
+  NavLink
 } from "react-router-dom";
 // import App from './components';
 import App from './components/App';
 import "./extract.less"
 import store from './newStore';
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <div className="flex justify-center">
-        <Link className="router-item" to="/index">index</Link>
-        <Link className="router-item" to="/person">person</Link>
+        <div className="nav-box flex justify-center">
+          <NavLink activeClassName='active-nav' className="nav-item" to="/">index</NavLink>
+          <NavLink activeClassName='active-nav' className="nav-item" to="/person">person</NavLink>
         </div>
         <Switch>
-          <Route  exact path="/index">
+          <Route  exact path="/">
             <h2 className="text-center text-blue-500 text-4xl mt-5">index route content</h2>
             <App></App>
           </Route>
-          <Route class="router-item" path="/person">
+          <Route path="/person">
           <h2 className="text-center text-blue-500 text-4xl mt-5">person route content</h2>
           </Route>
         </Switch>
