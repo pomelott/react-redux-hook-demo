@@ -28,9 +28,13 @@ class TestLifeTimes extends React.Component<any, any> {
         console.log('componentWillReceiveProps', props, state);
     }
 
-    shouldComponentUpdate(props: any, state: any) {
-        console.log('shouldComponentUpdate', props, state);
-        return true;
+    shouldComponentUpdate(nextProps: any, nextState: any) {
+        console.log('shouldComponentUpdate', nextProps, nextState);
+        console.log(this.props, this.state);
+        if (JSON.stringify(this.state) !== JSON.stringify(nextState) || JSON.stringify(this.props) !== JSON.stringify(nextProps)) {
+            return true;
+        }
+        return false;
     }
 
     componentWillUpdate() {
@@ -38,7 +42,7 @@ class TestLifeTimes extends React.Component<any, any> {
     }
 
     componentDidUpdate() {
-        console.log('componentDidUpdate');
+        console.log('componentDidUpdate', this.state);
     }
 
     clickHandle() {
@@ -46,9 +50,13 @@ class TestLifeTimes extends React.Component<any, any> {
             console.log('click', preState)
             return JSON.parse(JSON.stringify({
                 ...preState,
-                count: ++preState.count,
+                count: preState.count + 1,
             }))
+        }, () => {
+            console.log('--- after ---');
+            console.log(this.state);
         })
+
 
 
         // 测试 setState 的 同步批处理 问题; react18 之前有区别， 18之后全部为批处理
